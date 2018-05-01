@@ -1,16 +1,25 @@
+// array for cards
 var cards = ["queen", "queen", "king", "king"];
+// cards that are selected
 var cardsInPlay = [];
-var cardOne = cards[0];
-cardsInPlay.push(cardOne);
-console.log("User flipped " + cardOne);
-var cardTwo = cards[2];
-cardsInPlay.push(cardTwo);
-console.log("User flipped " + cardTwo);
-if (cardsInPlay.length === 2) {
+// function to check for match
+var checkForMatch = function() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-		alert("You've found a match!");
+		console.log("You've found a match!");
 	}
 	else {
-		alert("Sorry, try again.");
+		console.log("Sorry, try again");
 	}
-}
+};
+// function to add flipped cards into play (min 2) AND check for match
+var flipCard = function (cardID) {
+	cardsInPlay.push(cards[cardID]);
+	console.log("User flipped " + cards[cardID]);
+if (cardsInPlay.length === 2) {
+	checkForMatch()
+} 
+};
+
+// calling flipCard function
+flipCard(0);
+flipCard(2);
